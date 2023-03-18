@@ -1,0 +1,667 @@
+.app {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background: $kdl-bg-light;
+    padding-top: 56px;
+    overflow-x: hidden;
+}
+
+.no-sidebar {
+    margin-left: 0;
+}
+
+.app-footer {
+    .copyright {
+        font-size: 0.8125rem;
+    }
+}
+
+
+.app-wrapper {
+    @include transition (all 0.4s ease-in-out);
+}
+
+.app-page-title {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 1.5rem;
+}
+
+.app-card {
+    position: relative;
+    background: #fff;
+    @include border-radius(0.25rem);
+
+
+    &.border-left-decoration {
+        border-left: 3px solid $kdl-color-primary;
+    }
+
+    .app-card-link-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+    }
+
+    .app-card-header {
+        border-bottom: 1px solid $kdl-border-color;
+    }
+
+    .app-card-title {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    .card-header-action {
+        font-size: 0.875rem;
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+    .form-select-holder {
+        display: inline-block;
+    }
+
+    .btn-close {
+        padding: 1rem;
+
+        &:focus {
+            @include box-shadow(none);
+        }
+    }
+
+}
+
+
+.app-card-stat {
+    text-align: center;
+
+    .stats-type {
+        font-size: 0.875rem;
+        color: $kdl-text-color-light;
+        text-transform: uppercase;
+    }
+
+    .stats-figure {
+        font-size: 2rem;
+        color: $kdl-text-color-primary;
+    }
+
+    .stats-meta {
+        font-size: 0.875rem;
+        color: $kdl-text-color-light;
+
+    }
+
+}
+
+.app-card-progress-list {
+    .item {
+        position: relative;
+        border-bottom: 1px solid $kdl-border-color;
+
+        &:hover {
+            .title {
+                color: $kdl-text-color-primary;
+
+            }
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+        .title {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .meta {
+            font-size: 0.875rem;
+            color: $kdl-text-color-light;
+        }
+
+    }
+
+    .item-link-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+    }
+
+    .progress {
+        height: 0.5rem;
+    }
+}
+
+.app-card-stats-table {
+    .table {
+        font-size: 0.875rem;
+    }
+
+    .meta {
+        color: $kdl-text-color-light;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+
+    .stat-cell {
+        text-align: right;
+    }
+
+}
+
+.app-card-basic {
+
+    height: 100%;
+
+
+    .title {
+        font-size: 1rem;
+    }
+
+}
+
+
+.app-card {
+    .app-icon-holder {
+        display: inline-block;
+        background: lighten($kdl-color-primary, 60%);
+        color: $kdl-color-primary;
+        width: 50px;
+        height: 50px;
+        padding-top: 10px;
+        font-size: 1rem;
+        text-align: center;
+        @include border-radius(50%);
+
+        &.icon-holder-mono {
+            background: $kdl-bg-light;
+            color: $kdl-text-color-light;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .app-card-body {
+        &.has-card-actions {
+            position: relative;
+            padding-right: 1rem !important;
+        }
+
+        .app-card-actions {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            @include border-radius(50%);
+            position: absolute;
+            z-index: 10;
+            right: 0.75rem;
+            top: 0.75rem;
+
+            &:hover {
+                background: $kdl-bg-light;
+            }
+
+            .dropdown-menu {
+                font-size: 0.8125rem;
+            }
+
+        }
+    }
+}
+
+.app-card-doc {
+    &:hover {
+        @include box-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important);
+    }
+
+    .app-card-thumb-holder {
+        background: mix($kdl-bg-light, black, 95%);
+        text-align: center;
+        position: relative;
+        height: 112px;
+
+        .app-card-thumb {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+
+        }
+
+        .thumb-image {
+            @include opacity(0.7);
+            width: 100%;
+            height: auto;
+        }
+
+        &:hover {
+            background: mix($kdl-bg-light, white, 50%);
+
+            .thumb-image {
+                @include opacity(1);
+            }
+        }
+
+        .badge {
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+        }
+
+        .icon-holder {
+            font-size: 40px;
+            display: inline-block;
+            margin: 0 auto;
+            width: 80px;
+            height: 80px;
+            @include border-radius(50%);
+            background: #fff;
+            padding-top: 10px;
+
+            .pdf-file {
+                color: $kdl-color-pdf;
+            }
+
+            .text-file {
+                color: $kdl-color-word;
+            }
+
+            .excel-file {
+                color: $kdl-color-excel;
+            }
+
+            .ppt-file {
+                color: $kdl-color-ppt;
+            }
+
+            .video-file {
+                color: $kdl-color-video;
+            }
+
+            .zip-file {
+                color: $kdl-color-zip;
+            }
+        }
+
+    }
+
+    .app-doc-title {
+        font-size: 0.875rem;
+
+        a {
+            color: $kdl-text-color-primary;
+        }
+
+        &.truncate {
+            max-width: calc(100% - 30px);
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .app-doc-meta {
+        font-size: 0.75rem;
+    }
+
+}
+
+
+.table-search-form {
+    .form-control {
+        height: 2rem;
+        min-width: auto;
+    }
+}
+
+.app-dropdown-menu {
+    font-size: 0.875rem;
+}
+
+.app-card-zones-table {
+    .table {
+        font-size: 0.875rem;
+		background-color: $kdl-bg-light;
+
+        .center {
+            text-align: center;
+        }
+
+        th.cell {
+            opacity: 0.7;
+            border-width: 0;
+            font-size: $kdl-tkn-text-style-12;
+        }
+
+        td:first-child{
+            border-radius: 10px 0 0 15px;
+        }
+
+        td:last-child {
+            border-radius: 0 10px 15px 0;
+        }
+
+		td.cell{						
+            background-color: $kdl-text-color-white;
+		}
+
+        .cell {
+            font-size: $kdl-tkn-text-style-14;
+            border-color: $kdl-bg-light;
+            color: #06152B;
+            vertical-align: middle;
+            border-width: 0 0 10px 0;
+            padding: 1rem 0.5rem;
+
+            &:nth-child(1) {
+                padding-left: 1.5rem;
+            }
+
+            img {
+                margin-right: 0.25rem;
+            }
+
+            .zone-icon {
+                border-radius: 50%;
+                text-align: center;
+                width: 40px;
+                height: 40px;
+                vertical-align: middle;
+                display: inline-block;
+
+                img {
+                    top: 22%;
+                    position: relative;
+                    margin-right: 0;
+                }
+
+                &-volume {
+                    background: lighten(#FF69B4, 25%);
+                }
+
+                &-telephone {
+                    background: lighten(#4D4FD7, 25%);
+                }
+
+                &-location {
+                    background: lighten(#03A89E, 25%);
+                }
+            }
+        }
+    }
+
+    .cell {
+        span {
+            display: inline-block;
+        }
+
+        .note {
+            display: block;
+            color: $kdl-text-color-light;
+            font-size: 0.75rem;
+
+        }
+    }
+
+    .btn-sm {
+        padding: 0.125rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .truncate {
+        max-width: 250px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+}
+
+
+.app-nav-tabs {
+    background: #fff;
+    padding: 0;
+
+    .nav-link {
+        color: $kdl-text-color-secondary;
+        font-size: 0.875rem;
+        font-weight: bold;
+
+        &.active {
+            color: $kdl-link-color;
+            border-bottom: 2px solid $kdl-link-color;
+
+            &:hover {
+                background: none;
+
+            }
+        }
+
+        &:hover {
+            background: lighten($kdl-link-color, 60%);
+            color: $kdl-link-color;
+        }
+    }
+
+}
+
+.app-pagination {
+    .pagination {
+        font-size: 0.875rem;
+
+        .page-link {
+            color: $kdl-text-color-secondary;
+            padding: 0.25rem 0.5rem
+        }
+
+        .page-item {
+            &.active {
+                .page-link {
+                    background: lighten($kdl-text-color-secondary, 10%);
+                    color: #fff;
+                    border-color: lighten($kdl-text-color-secondary, 10%);
+                }
+            }
+
+            &.disabled {
+                .page-link {
+                    color: lighten($kdl-text-color-light, 10%);
+                }
+            }
+
+        }
+    }
+}
+
+
+.app-card-accordion {
+
+    .app-card-title {
+        font-size: 1.125rem;
+    }
+
+    .faq-accordion {
+        .accordion-item {
+            @include border-radius(0);
+            border: none;
+            border-bottom: 1px solid $kdl-border-color;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .accordion-header {
+            border: none;
+        }
+
+        .accordion-button {
+            padding: 1rem;
+            @include border-radius(0);
+            border: none;
+            box-shadow: none;
+            background: none;
+            padding-left: 0;
+            font-size: 1rem;
+            text-decoration: none;
+            color: $kdl-color-primary;
+
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .accordion-body {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            font-size: 1rem;
+        }
+    }
+}
+
+.app-card-account {
+    height: 100%;
+
+    .item {
+        font-size: 0.875rem;
+
+        .profile-image {
+            width: 60px;
+            height: 60px;
+        }
+
+        .btn-sm {
+            padding: 0.125rem 0.5rem;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.settings-section {
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .section-intro {
+        font-size: 0.875rem;
+    }
+
+}
+
+.app-card-settings {
+    font-size: 1rem;
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        font-size: 1rem;
+    }
+}
+
+.app-404-page {
+    padding-top: 2rem;
+
+    .page-title {
+        font-size: 3rem;
+        line-height: 0.8;
+        font-weight: bold;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+.chart-container {
+    position: relative;
+}
+
+.app-table-hover>tbody>tr:hover {
+    background-color: mix($kdl-bg-light, white, 50%);
+}
+
+
+.app-card-notification {
+    .notification-type {
+        .badge {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+        }
+
+    }
+
+    .profile-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .notification-title {
+        font-size: 1.125rem;
+
+    }
+
+    .notification-content {
+        font-size: 0.875rem;
+    }
+
+    .notification-meta {
+        font-size: 0.75rem;
+        color: $kdl-text-color-light;
+    }
+
+    .action-link {
+        font-size: 0.875rem;
+    }
+
+    .app-card-footer {
+        background: mix($kdl-bg-light, white, 50%);
+    }
+}
+
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .table-search-form {
+        .form-control {
+            min-width: 300px;
+        }
+    }
+}
+
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .app-card-stat .stats-figure {
+        font-size: 1.125rem;
+    }
+
+    .app-card-stat .stats-type {
+        font-size: 0.75rem;
+    }
+}

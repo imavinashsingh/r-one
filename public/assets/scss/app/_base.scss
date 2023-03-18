@@ -1,0 +1,245 @@
+/* ============= Base ============= */
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $kdl-text-color-primary;
+    font-family: $kdl-tkn-font-family-dmsans;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+// 	color: $kdl-text-color-primary;
+// 	font-weight: 600;
+// }
+
+a {
+    color: $kdl-link-color;
+    font-size: $kdl-tkn-text-style-14;
+    text-decoration: none;
+    line-height: 132%;
+
+    &:hover {
+        color: darken($kdl-link-color, 5%);
+    }
+}
+
+.sr-only {
+    font-weight: $kdl-tkn-font-weight-500;
+    font-size: $kdl-tkn-text-style-16;
+    line-height: 132%;
+}
+
+.form-check-label{
+    font-size: $kdl-tkn-text-style-14;
+    line-height: 118%;
+}
+
+hr {
+    background: darken($kdl-border-color, 20%);
+}
+
+.text-muted {
+    color: lighten($kdl-text-color-light, 10%) !important;
+}
+
+.table-dark {
+    background: $kdl-text-color-primary;
+    color: #fff;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border-color: $kdl-border-color;
+}
+
+.table th,
+.table td {
+    border-color: $kdl-border-color;
+}
+
+.table thead th {
+    border-color: $kdl-border-color;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: $smoky-white;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+    border-color: lighten($kdl-text-color-primary, 20%);
+}
+
+
+.table-hover>tbody>tr:hover {
+    background-color: lighten(#f5f6fe, 10%);
+
+}
+
+
+.popover {
+    border-color: darken($kdl-bg-light, 5%);
+}
+
+.bs-popover-left>.arrow::before,
+.bs-popover-auto[x-placement^="left"]>.arrow::before {
+    border-left-color: darken($kdl-bg-light, 5%);
+}
+
+.bs-popover-right>.arrow::before,
+.bs-popover-auto[x-placement^="right"]>.arrow::before {
+    border-right-color: darken($kdl-bg-light, 5%);
+}
+
+.bs-popover-top>.arrow::before,
+.bs-popover-auto[x-placement^="top"]>.arrow::before {
+    border-top-color: darken($kdl-bg-light, 5%);
+}
+
+.bs-popover-bottom>.arrow::before,
+.bs-popover-auto[x-placement^="bottom"]>.arrow::before {
+    border-bottom-color: darken($kdl-bg-light, 5%);
+}
+
+a.app-link {
+    text-decoration: underline;
+    -webkit-text-decoration-color: rgba($kdl-text-color-primary, 0.3);
+    text-decoration-color: rgba($kdl-text-color-primary, 0.3);
+
+    &:hover {
+        color: $kdl-color-primary;
+        -webkit-text-decoration-color: rgba($kdl-color-primary, 0.8);
+        text-decoration-color: rgba($kdl-color-primary, 0.8);
+    }
+}
+
+button.close {
+    &:focus {
+        outline: none;
+        @include box-shadow(none);
+    }
+}
+
+.btn {
+    font-weight: $kdl-tkn-font-weight-500;
+    padding: 0.5rem 1rem;
+    font-size: $kdl-tkn-text-style-16;
+    line-height: 130%;
+    border: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: none;
+    }
+
+    .bi {
+        position: relative;
+        top: -2px;
+    }
+}
+
+.btn:focus,
+.btn.focus {
+    box-shadow: none !important;
+}
+
+.app-btn-primary {
+    background: $kdl-color-primary;
+    color: #fff;
+    border-color: $kdl-color-primary;
+
+    &:hover,
+    &:active {
+        color: #fff;
+        background: lighten($kdl-color-primary, 5%);
+        border-color: lighten($kdl-color-primary, 5%);
+    }
+}
+
+.app-btn-secondary {
+    background: white;
+    color: $kdl-text-color-secondary;
+    border: 1px solid lighten($kdl-text-color-secondary, 35%);
+
+    &:hover {
+        color: $kdl-color-primary;
+        border: 1px solid $kdl-color-primary;
+        background: white;
+    }
+}
+
+.btn-light {
+    background: $kdl-bg-light;
+    color: $kdl-color-primary;
+
+    &:hover {
+        background: $kdl-bg-light;
+        color: $kdl-color-primary;
+    }
+}
+
+.form-control {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    height: 2.5rem;
+    border-color: $kdl-border-color;
+    color: $kdl-text-color-primary;
+    background-color: $kdl-background-color;
+
+    &:focus {
+        @include box-shadow(none);
+        outline: none;
+        color: $kdl-text-color-primary;
+    }
+
+    &::placeholder {
+        color: $kdl-text-color-primary !important;
+        opacity: 0.7;
+        font-size: $kdl-tkn-text-style-14;
+    }
+}
+
+.form-check-input:checked {
+    background-color: $kdl-text-color-primary;
+    border-color: $kdl-text-color-primary;
+}
+
+.dropdown-menu {
+    border-color: $kdl-border-color;
+
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+
+        &:hover {
+            color: $kdl-text-color-primary;
+        }
+
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background: mix($kdl-bg-light, white, 50%);
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active {
+        background: mix($kdl-bg-light, white, 50%);
+    }
+}
+
+
+
+
+
+.dropdown-divider {
+    border-top-color: $kdl-border-color;
+    @include opacity(1);
+}
+
+.dropdown-toggle.no-toggle-arrow {
+    &:after {
+        display: none !important;
+    }
+}

@@ -1,0 +1,59 @@
+/*************************** kdl Colours****************************/
+// Define kdl colour scheme
+$kdl-color-primary: #15a362;
+
+$kdl-text-color-primary: #06152B;
+$kdl-text-color-secondary: lighten($kdl-text-color-primary, 25%);
+$kdl-text-color-light: lighten($kdl-text-color-primary, 40%);
+$kdl-bg-light: #f5f6fe;
+$kdl-border-color: lighten($kdl-text-color-primary, 75%);
+$kdl-color-new: #5ab66e;
+$kdl-color-count: #EC776C;
+$kdl-error: #EC575B;
+$smoky-white: #f5f5f5;
+$kdl-background-color:#F1F4FA;
+
+$kdl-success-color: #5cb377;
+$kdl-warning-color: #EEBF41;
+$kdl-info-color: #5b99ea;
+$kdl-danger-color: #d26d69;
+
+
+$kdl-color-pdf: #DA2D27;
+$kdl-color-word: #66a0fd;
+$kdl-color-ppt: #f4b400;
+$kdl-color-excel: #0da95f;
+$kdl-color-video: #935dc1;
+$kdl-color-zip: #252930;
+
+/*************************** Variables Section. *****************************/
+// Create variables to override the default value for variables used in the Bootstrap SCSS files.
+
+
+$kdl-colors: ("primary": $kdl-color-primary,
+  "secondary": $kdl-text-color-secondary,
+  "success": $kdl-success-color,
+  "danger": $kdl-danger-color,
+  "warning": $kdl-warning-color,
+  "info": $kdl-info-color,
+);
+
+//Smooth Scroll
+html {
+  scroll-behavior: smooth;
+}
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: $kdl-text-color-primary;
+}
+
+
+/*************************** Import Bootstrap  *****************************/
+@import "bootstrap/scss/bootstrap.scss";
+
+
+/*************************** kdl Styles Section ****************************/
+@import "app/styles.scss";
